@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>GOSSIP PROJECT</title>
+  </head>
+   
+<body>
+
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4">DERNIERS GOSSIP </h1>
+    <p class="lead">Regardez ce qui se dit sur vous...</p>
+    <a class="btn btn-warning" href="/gossips/new/" role="button">LACHE TON GOSSIP</a>
+  </div>
+</div>
+
+
+<div class="row">
+  <% @all_gossips.each do |select| %>
+  <div class="col-sm-6" style="padding: 30px">
+      <div class="card">
+        <div class="card-header">
+          <b><%= select.title %></b><br/>
+          </div>
+        <div class="card-body">
+          <h5 class="card-title">A été écrit par <b><%= select.user.first_name %></b><br/>
+          <%= link_to "Voir le potin", gossip_path(:id => select.id), class:"btn btn-primary btn-sm", role:"button" %>
+    </p>
+          </div>
+      </div>
+    </div>
+  <% end %>
+  </div>
+
+  </body>
+</html>

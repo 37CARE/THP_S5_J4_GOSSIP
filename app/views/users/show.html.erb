@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Vive moi</title>
+  </head>
+  <body>
+
+    <h1> Haaave you met <b><%= @author.first_name %></b> ?</h1>
+
+      <p>Last name : <%= @author.last_name %> </p>
+      <p>Description : <%= @author.description %> </p>
+      <p>Email : <%= @author.email %> </p>
+      <p>Age : <%= @author.age %> ans</p>
+      <p>Ville : <%= @author.city.name %> </p>
+
+      <p>
+        <%= link_to "Voir la ville", city_path(:id => @author.city.id), class:"btn btn-primary btn-sm", role:"button" %>
+      </p>
+
+  </body>
+</html>
